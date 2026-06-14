@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:decision="http://www.bonitasoft.org/ns/bpm/process/decision" xmlns:expression="http://www.bonitasoft.org/ns/bpm/expression" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:process="http://www.bonitasoft.org/ns/bpm/process">
-  <process:MainProcess xmi:id="_CAjMYF6yEfGVW73UMjJz-A" name="PadronElectora" bonitaModelVersion="9">
+  <process:MainProcess xmi:id="_CAjMYF6yEfGVW73UMjJz-A" name="PadronElectoral" bonitaModelVersion="9">
     <elements xmi:type="process:Pool" xmi:id="_CAjMYV6yEfGVW73UMjJz-A" name="Depuración del Padrón Electoral">
       <elements xmi:type="process:Lane" xmi:id="_CAjMYl6yEfGVW73UMjJz-A" name="Subgerencia de Verificación de Datos y Depuración" actor="_CAjMe16yEfGVW73UMjJz-A">
         <elements xmi:type="process:Task" xmi:id="_SrnmEF6zEfGVW73UMjJz-A" name="Revisar y validar alertas manualmente" outgoing="_KfrC4F60EfGVW73UMjJz-A" incoming="_PQkbgF6zEfGVW73UMjJz-A" overrideActorsOfTheLane="false">
@@ -15,7 +15,24 @@
           <formMapping xmi:type="process:FormMapping" xmi:id="_SroNKV6zEfGVW73UMjJz-A">
             <targetForm xmi:type="expression:Expression" xmi:id="_SroNKl6zEfGVW73UMjJz-A" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
-          <contract xmi:type="process:Contract" xmi:id="_SroNKF6zEfGVW73UMjJz-A"/>
+          <contract xmi:type="process:Contract" xmi:id="_SroNKF6zEfGVW73UMjJz-A">
+            <inputs xmi:type="process:ContractInput" xmi:id="_LVUBkGegEfGr1IcmRzxUZg" name="idDetalleInsumo" type="INTEGER">
+              <mapping xmi:type="process:ContractInputMapping" xmi:id="_LVUBkWegEfGr1IcmRzxUZg"/>
+            </inputs>
+            <inputs xmi:type="process:ContractInput" xmi:id="_WWJRwGegEfGr1IcmRzxUZg" name="dniCiudadano">
+              <mapping xmi:type="process:ContractInputMapping" xmi:id="_WWJRwWegEfGr1IcmRzxUZg"/>
+            </inputs>
+            <inputs xmi:type="process:ContractInput" xmi:id="_Xeoj0GegEfGr1IcmRzxUZg" name="decisionValidacion">
+              <mapping xmi:type="process:ContractInputMapping" xmi:id="_Xeoj0WegEfGr1IcmRzxUZg"/>
+            </inputs>
+            <inputs xmi:type="process:ContractInput" xmi:id="_YZ88kGegEfGr1IcmRzxUZg" name="sustentoAnalista">
+              <mapping xmi:type="process:ContractInputMapping" xmi:id="_YZ88kWegEfGr1IcmRzxUZg"/>
+            </inputs>
+            <constraints xmi:type="process:ContractConstraint" xmi:id="_irnZoGegEfGr1IcmRzxUZg" expression="if (decisionValidacion == &quot;Rechazado&quot;) { return sustentoAnalista != null &amp;&amp; !sustentoAnalista.trim().isEmpty(); } return true;" errorMessage="Debe ingresar obligatoriamente un sustento legal si rechaza la alerta" name="validarSustentoObligatorio"/>
+            <constraints xmi:type="process:ContractConstraint" xmi:id="_o6BcoGegEfGr1IcmRzxUZg" expression="return dniCiudadano != null &amp;&amp; dniCiudadano.matches(&quot;\\d{8}&quot;);" errorMessage="El DNI debe contener exactamente 8 dígitos numéricos" name="validarFormatoDNI">
+              <inputNames>dniCiudadano</inputNames>
+            </constraints>
+          </contract>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_SroNK16zEfGVW73UMjJz-A" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
         </elements>
       </elements>
@@ -99,10 +116,47 @@
           <formMapping xmi:type="process:FormMapping" xmi:id="_p8XIul6zEfGVW73UMjJz-A">
             <targetForm xmi:type="expression:Expression" xmi:id="_p8XIu16zEfGVW73UMjJz-A" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
-          <contract xmi:type="process:Contract" xmi:id="_p8XIuV6zEfGVW73UMjJz-A"/>
+          <contract xmi:type="process:Contract" xmi:id="_p8XIuV6zEfGVW73UMjJz-A">
+            <inputs xmi:type="process:ContractInput" xmi:id="_1Jm-8GegEfGr1IcmRzxUZg" name="codigoVerificacion">
+              <mapping xmi:type="process:ContractInputMapping" xmi:id="_1Jm-8WegEfGr1IcmRzxUZg"/>
+            </inputs>
+            <inputs xmi:type="process:ContractInput" xmi:id="_2Faf4GegEfGr1IcmRzxUZg" name="confirmacionFirma" type="BOOLEAN">
+              <mapping xmi:type="process:ContractInputMapping" xmi:id="_2Faf4WegEfGr1IcmRzxUZg"/>
+            </inputs>
+            <inputs xmi:type="process:ContractInput" xmi:id="_4GtpQGegEfGr1IcmRzxUZg" name="hashCertificadoDigital">
+              <mapping xmi:type="process:ContractInputMapping" xmi:id="_4GtpQWegEfGr1IcmRzxUZg"/>
+            </inputs>
+            <constraints xmi:type="process:ContractConstraint" xmi:id="_5Xk0MGegEfGr1IcmRzxUZg" expression="return confirmacionFirma == true;" errorMessage="Debe aprobar y confirmar la firma digital para proceder con el envío formal" name="validarAprobacionFirma">
+              <inputNames>confirmacionFirma</inputNames>
+            </constraints>
+            <constraints xmi:type="process:ContractConstraint" xmi:id="_98DsAGegEfGr1IcmRzxUZg" expression="return hashCertificadoDigital != null &amp;&amp; hashCertificadoDigital.length() == 64;" errorMessage="El hash de la firma digital no cumple con la longitud requerida para un algoritmo criptográfico SHA-256" name="validarLongitudHash">
+              <inputNames>hashCertificadoDigital</inputNames>
+            </constraints>
+          </contract>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_p8XIvF6zEfGVW73UMjJz-A" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
         </elements>
       </elements>
+      <data xmi:type="process:BusinessObjectData" xmi:id="_pR9Q8GefEfGr1IcmRzxUZg" name="insumoCargado" dataType="_CAjMlF6yEfGVW73UMjJz-A" className="com.company.model.InsumoElectoral">
+        <defaultValue xmi:type="expression:Expression" xmi:id="_pR9Q8WefEfGr1IcmRzxUZg" name="" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object"/>
+      </data>
+      <data xmi:type="process:BusinessObjectData" xmi:id="_uzXrEGefEfGr1IcmRzxUZg" name="detallesProcesar" multiple="true" dataType="_CAjMlF6yEfGVW73UMjJz-A" className="com.company.model.DetalleInsumo">
+        <defaultValue xmi:type="expression:Expression" xmi:id="_uzXrEWefEfGr1IcmRzxUZg" name="" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object"/>
+      </data>
+      <data xmi:type="process:BusinessObjectData" xmi:id="_0MnnsGefEfGr1IcmRzxUZg" name="ciudadanoActual" dataType="_CAjMlF6yEfGVW73UMjJz-A" className="com.company.model.Ciudadano">
+        <defaultValue xmi:type="expression:Expression" xmi:id="_0MnnsWefEfGr1IcmRzxUZg" name="" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object"/>
+      </data>
+      <data xmi:type="process:BusinessObjectData" xmi:id="_2OIMcGefEfGr1IcmRzxUZg" name="registroModificar" dataType="_CAjMlF6yEfGVW73UMjJz-A" className="com.company.model.RegistroPadron">
+        <defaultValue xmi:type="expression:Expression" xmi:id="_2OIMcWefEfGr1IcmRzxUZg" name="" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object"/>
+      </data>
+      <data xmi:type="process:Data" xmi:id="_8HZs8GefEfGr1IcmRzxUZg" name="existenAlertasCriticas" dataType="_CAjMjF6yEfGVW73UMjJz-A">
+        <defaultValue xmi:type="expression:Expression" xmi:id="_8HZs8WefEfGr1IcmRzxUZg" name="false" content="false" returnType="java.lang.Boolean"/>
+      </data>
+      <data xmi:type="process:Data" xmi:id="__z-FUGefEfGr1IcmRzxUZg" name="totalRegistrosProcesados" dataType="_CAjMjl6yEfGVW73UMjJz-A">
+        <defaultValue xmi:type="expression:Expression" xmi:id="__z-FUWefEfGr1IcmRzxUZg" name="0" content="0" returnType="java.lang.Integer"/>
+      </data>
+      <data xmi:type="process:Data" xmi:id="_DRQEgGegEfGr1IcmRzxUZg" name="padronFirmado" dataType="_CAjMjF6yEfGVW73UMjJz-A">
+        <defaultValue xmi:type="expression:Expression" xmi:id="_DRQEgWegEfGr1IcmRzxUZg" name="false" content="false" returnType="java.lang.Boolean"/>
+      </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_CAjMdF6yEfGVW73UMjJz-A">
         <targetForm xmi:type="expression:Expression" xmi:id="_CAjMdV6yEfGVW73UMjJz-A" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
