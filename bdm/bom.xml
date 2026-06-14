@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<businessObjectModel xmlns="http://documentation.bonitasoft.com/bdm-xml-schema/1.0" modelVersion="1.0">
+    <businessObjects>
+        <businessObject qualifiedName="com.company.model.CertificadoDigital">
+            <fields>
+                <field type="STRING" length="255" name="idCertificado" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="tipo" nullable="false" collection="false"/>
+                <field type="BOOLEAN" length="255" name="emitido" nullable="false" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.Ciudadano">
+            <fields>
+                <field type="STRING" length="255" name="dni" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="nombres" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="apellidoPaterno" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="apellidoMaterno" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="fechaNacimiento" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="direccion" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="ubigeoActual" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="estadoCivil" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="condicionSufragio" nullable="true" collection="false"/>
+                <field type="BOOLEAN" length="255" name="validadoPorRENIEC" nullable="false" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.LogAuditoria">
+            <fields>
+                <field type="STRING" length="255" name="accion" nullable="false" collection="false"/>
+                <field type="LOCALDATE" length="255" name="timestap" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="entidadSolicitante" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="resultado" nullable="false" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.ResultadoVerificacion">
+            <fields>
+                <field type="BOOLEAN" length="255" name="datosCoinciden" nullable="false" collection="false"/>
+                <field type="BOOLEAN" length="255" name="requiereBiometria" nullable="false" collection="false"/>
+                <field type="BOOLEAN" length="255" name="biometriaAprobada" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="codigoVerificacion" nullable="false" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.SolicitudCertificacion">
+            <fields>
+                <field type="STRING" length="255" name="idSolicitud" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="estado" nullable="false" collection="false"/>
+                <field type="LOCALDATE" length="255" name="fechaCreacion" nullable="false" collection="false"/>
+                <relationField type="COMPOSITION" reference="com.company.model.Ciudadano" fetchType="LAZY" name="ciudadano" nullable="false" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.CertificadoDigital" fetchType="LAZY" name="certificado" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.ValidacionBiometrica" fetchType="LAZY" name="validacion" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.SolicitudVerificacion">
+            <fields>
+                <field type="STRING" length="255" name="nombreEntidad" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="credenciales" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="dniCiudadano" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="nombreCiudadano" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="estadoSolicitud" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="fechaSolicitud" nullable="false" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.ValidacionBiometrica">
+            <fields>
+                <field type="BOOLEAN" length="255" name="resultado" nullable="false" collection="false"/>
+                <field type="LOCALDATE" length="255" name="fechaValidacion" nullable="false" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+    </businessObjects>
+</businessObjectModel>
