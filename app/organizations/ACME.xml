@@ -547,6 +547,48 @@
       <enabled>true</enabled>
       <password encrypted="false">bpm</password>
     </user>
+    <user userName="joaquin.castelo">
+      <firstName>Joaquin</firstName>
+      <lastName>Castelo</lastName>
+      <title>Mr</title>
+      <jobTitle>Estudiante</jobTitle>
+      <personalData/>
+      <professionalData>
+        <email>joaquincaste@gmail.com</email>
+      </professionalData>
+      <password encrypted="false">castelo</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="sergio.calcina">
+      <firstName>Sergio</firstName>
+      <lastName>Calcina</lastName>
+      <title>Mr</title>
+      <jobTitle>Registrador</jobTitle>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">maiki</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="sebastian.delvalle">
+      <firstName>Sebastian</firstName>
+      <lastName>del Valle</lastName>
+      <title>Sr</title>
+      <jobTitle>Analista</jobTitle>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">triciclo</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="steve.supo">
+      <firstName>Steve</firstName>
+      <lastName>Supo</lastName>
+      <title>Mr</title>
+      <jobTitle>Tecnico</jobTitle>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">steve</password>
+      <customUserInfoValues/>
+    </user>
   </users>
   <roles>
     <role name="Ciudadano_Rol">
@@ -555,6 +597,15 @@
     <role name="Funcionario_Rol">
       <displayName>Funcionario_Rol</displayName>
       <description></description>
+    </role>
+    <role name="Registrador_rol">
+      <displayName>Registrador_rol</displayName>
+    </role>
+    <role name="Analista_rol">
+      <displayName>Analista_rol</displayName>
+    </role>
+    <role name="Tecnico_rol">
+      <displayName>Tecnico_rol</displayName>
     </role>
   </roles>
   <groups>
@@ -581,6 +632,26 @@
     <membership>
       <userName>daniela.angelo</userName>
       <roleName>Ciudadano_Rol</roleName>
+      <groupName>RENIEC</groupName>
+    </membership>
+    <membership>
+      <userName>joaquin.castelo</userName>
+      <roleName>Ciudadano_Rol</roleName>
+      <groupName>RENIEC</groupName>
+    </membership>
+    <membership>
+      <userName>sergio.calcina</userName>
+      <roleName>Registrador_rol</roleName>
+      <groupName>RENIEC</groupName>
+    </membership>
+    <membership>
+      <userName>sebastian.delvalle</userName>
+      <roleName>Analista_rol</roleName>
+      <groupName>RENIEC</groupName>
+    </membership>
+    <membership>
+      <userName>steve.supo</userName>
+      <roleName>Tecnico_rol</roleName>
       <groupName>RENIEC</groupName>
     </membership>
   </memberships>

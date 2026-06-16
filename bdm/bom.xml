@@ -17,13 +17,34 @@
                 <field type="STRING" length="255" name="nombres" nullable="false" collection="false"/>
                 <field type="STRING" length="255" name="apellidoPaterno" nullable="false" collection="false"/>
                 <field type="STRING" length="255" name="apellidoMaterno" nullable="false" collection="false"/>
-                <field type="STRING" length="255" name="fechaNacimiento" nullable="true" collection="false"/>
+                <field type="LOCALDATE" length="255" name="fechaNacimiento" nullable="false" collection="false"/>
                 <field type="STRING" length="255" name="direccion" nullable="true" collection="false"/>
                 <field type="STRING" length="255" name="ubigeoActual" nullable="true" collection="false"/>
                 <field type="STRING" length="255" name="estadoCivil" nullable="true" collection="false"/>
                 <field type="STRING" length="255" name="condicionSufragio" nullable="true" collection="false"/>
-                <field type="BOOLEAN" length="255" name="validadoPorRENIEC" nullable="false" collection="false"/>
+                <field type="BOOLEAN" length="255" name="validadoPorRENIEC" nullable="true" collection="false"/>
                 <relationField type="COMPOSITION" reference="com.company.model.RegistroPadron" fetchType="LAZY" name="registroPadron" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.DNIeProducido">
+            <fields>
+                <field type="STRING" length="255" name="numeroDNIe" nullable="false" collection="false"/>
+                <field type="LOCALDATE" length="255" name="fechaProduccion" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="estadoChip" nullable="false" collection="false"/>
+                <field type="BOOLEAN" length="255" name="certificadoActivado" nullable="false" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.DatosBiometricos">
+            <fields>
+                <field type="STRING" length="255" name="codigoHuella" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="rutaFotografia" nullable="false" collection="false"/>
+                <field type="BOOLEAN" length="255" name="validadoAFIS" nullable="false" collection="false"/>
             </fields>
             <uniqueConstraints/>
             <queries/>
@@ -128,9 +149,24 @@
                 <field type="STRING" length="255" name="idSolicitud" nullable="false" collection="false"/>
                 <field type="STRING" length="255" name="estado" nullable="false" collection="false"/>
                 <field type="LOCALDATE" length="255" name="fechaCreacion" nullable="false" collection="false"/>
-                <relationField type="COMPOSITION" reference="com.company.model.Ciudadano" fetchType="LAZY" name="ciudadano" nullable="false" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.Ciudadano" fetchType="LAZY" name="ciudadano" nullable="false" collection="false"/>
                 <relationField type="AGGREGATION" reference="com.company.model.CertificadoDigital" fetchType="LAZY" name="certificado" nullable="true" collection="false"/>
                 <relationField type="AGGREGATION" reference="com.company.model.ValidacionBiometrica" fetchType="LAZY" name="validacion" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.SolicitudDNIe">
+            <fields>
+                <field type="STRING" length="255" name="idSolicitud" nullable="false" collection="false"/>
+                <field type="LOCALDATE" length="255" name="fechaSolicitud" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="estado" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="numeroReciboPago" nullable="false" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.Ciudadano" fetchType="LAZY" name="ciudadano" nullable="false" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.DatosBiometricos" fetchType="LAZY" name="datosBiometricos" nullable="false" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.Expediente" fetchType="LAZY" name="expedienteDigital" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.DNIeProducido" fetchType="LAZY" name="dnieProducido" nullable="true" collection="false"/>
             </fields>
             <uniqueConstraints/>
             <queries/>
