@@ -17,7 +17,7 @@
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_pDXuvV_FEfGgAISnwwXOlg" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_pDXuvl_FEfGgAISnwwXOlg" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_pDXuv1_FEfGgAISnwwXOlg" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
-          <formMapping xmi:type="process:FormMapping" xmi:id="_pDXuwF_FEfGgAISnwwXOlg">
+          <formMapping xmi:type="process:FormMapping" xmi:id="_pDXuwF_FEfGgAISnwwXOlg" type="NONE">
             <targetForm xmi:type="expression:Expression" xmi:id="_Ig34AGk1EfGc59IOA9NHIQ" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
           <contract xmi:type="process:Contract" xmi:id="_pDXuwl_FEfGgAISnwwXOlg">
@@ -46,7 +46,7 @@
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_mU6Vpl_LEfGgAISnwwXOlg" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_mU6VqF_LEfGgAISnwwXOlg" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_mU6Vp1_LEfGgAISnwwXOlg" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
-          <formMapping xmi:type="process:FormMapping" xmi:id="_Y2_iiV_MEfGgAISnwwXOlg">
+          <formMapping xmi:type="process:FormMapping" xmi:id="_Y2_iiV_MEfGgAISnwwXOlg" type="NONE">
             <targetForm xmi:type="expression:Expression" xmi:id="_Ig34AWk1EfGc59IOA9NHIQ" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
           <contract xmi:type="process:Contract" xmi:id="_Y2_iiF_MEfGgAISnwwXOlg"/>
@@ -84,9 +84,9 @@
         <defaultValue xmi:type="expression:Expression" xmi:id="_Y4QLkGk0EfGc59IOA9NHIQ" name="initDatosNacimientoVar()" content="return new com.company.model.Nacimiento();" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.Nacimiento"/>
       </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_pDXuxF_FEfGgAISnwwXOlg">
-        <targetForm xmi:type="expression:Expression" xmi:id="_yvF0cGk5EfGc59IOA9NHIQ" name="newForm1" content="26d7d4db-3977-449b-92c8-95a9eb033d25" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_04gVkGnJEfGizaVO8fiIlg" name="formRegistroNacimiento" content="31375d65-a444-43bc-85aa-44f142937368" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
-      <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_pDXuxl_FEfGgAISnwwXOlg">
+      <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_pDXuxl_FEfGgAISnwwXOlg" type="NONE">
         <targetForm xmi:type="expression:Expression" xmi:id="_pDXux1_FEfGgAISnwwXOlg" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </overviewFormMapping>
       <connections xmi:type="process:SequenceFlow" xmi:id="_pDXuyF_FEfGgAISnwwXOlg" target="_pDXut1_FEfGgAISnwwXOlg" source="_pDXus1_FEfGgAISnwwXOlg">
@@ -125,8 +125,8 @@
           <inputs xmi:type="process:ContractInput" xmi:id="_Y4PkgWk0EfGc59IOA9NHIQ" name="nombres"/>
           <inputs xmi:type="process:ContractInput" xmi:id="_Y4Pkgmk0EfGc59IOA9NHIQ" name="apellidoPaterno"/>
           <inputs xmi:type="process:ContractInput" xmi:id="_Y4Pkg2k0EfGc59IOA9NHIQ" name="apellidoMaterno"/>
-          <inputs xmi:type="process:ContractInput" xmi:id="_Y4PkhGk0EfGc59IOA9NHIQ" name="fechaNacimiento"/>
-          <inputs xmi:type="process:ContractInput" xmi:id="_Y4PkhWk0EfGc59IOA9NHIQ" name="codigoCNV"/>
+          <inputs xmi:type="process:ContractInput" xmi:id="_Y4PkhGk0EfGc59IOA9NHIQ" name="fechaNacimiento" type="LOCALDATE"/>
+          <inputs xmi:type="process:ContractInput" xmi:id="_Y4PkhWk0EfGc59IOA9NHIQ" name="codigoCNV" type="INTEGER"/>
           <inputs xmi:type="process:ContractInput" xmi:id="_Y4Pkhmk0EfGc59IOA9NHIQ" name="dniDeclarante"/>
         </inputs>
         <constraints xmi:type="process:ContractConstraint" xmi:id="_XwmxkGk1EfGc59IOA9NHIQ" expression="datosNacimientoVarInput.codigoCNV != null" errorMessage="El código CNV es obligatorio para el registro." name="validarCNV">
