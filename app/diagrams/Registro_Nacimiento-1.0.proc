@@ -18,7 +18,7 @@
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_pDXuvl_FEfGgAISnwwXOlg" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_pDXuv1_FEfGgAISnwwXOlg" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <formMapping xmi:type="process:FormMapping" xmi:id="_pDXuwF_FEfGgAISnwwXOlg">
-            <targetForm xmi:type="expression:Expression" xmi:id="_680GYF_OEfGgAISnwwXOlg" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+            <targetForm xmi:type="expression:Expression" xmi:id="_Ig34AGk1EfGc59IOA9NHIQ" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
           <contract xmi:type="process:Contract" xmi:id="_pDXuwl_FEfGgAISnwwXOlg">
             <inputs xmi:type="process:ContractInput" xmi:id="_gsTgkGL7EfG1yaJd8N0m7A" name="documentosAprobadosInput" type="BOOLEAN">
@@ -47,7 +47,7 @@
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_mU6VqF_LEfGgAISnwwXOlg" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_mU6Vp1_LEfGgAISnwwXOlg" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <formMapping xmi:type="process:FormMapping" xmi:id="_Y2_iiV_MEfGgAISnwwXOlg">
-            <targetForm xmi:type="expression:Expression" xmi:id="_680GYV_OEfGgAISnwwXOlg" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+            <targetForm xmi:type="expression:Expression" xmi:id="_Ig34AWk1EfGc59IOA9NHIQ" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
           <contract xmi:type="process:Contract" xmi:id="_Y2_iiF_MEfGgAISnwwXOlg"/>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_Y2_ii1_MEfGgAISnwwXOlg" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
@@ -81,12 +81,12 @@
         </elements>
       </elements>
       <data xmi:type="process:BusinessObjectData" xmi:id="_H7FG0GL0EfG1yaJd8N0m7A" name="datosNacimientoVar" dataType="_pDY86l_FEfGgAISnwwXOlg" className="com.company.model.Nacimiento">
-        <defaultValue xmi:type="expression:Expression" xmi:id="_wW_fgGL1EfG1yaJd8N0m7A" name="initDatosNacimientoVar()" content="def nacimientoVar = new com.company.model.Nacimiento()&#xD;&#xA;nacimientoVar.nombres = datosNacimientoVarInput?.nombres&#xD;&#xA;nacimientoVar.apellidoPaterno = datosNacimientoVarInput?.apellidoPaterno&#xD;&#xA;nacimientoVar.apellidoMaterno = datosNacimientoVarInput?.apellidoMaterno&#xD;&#xA;nacimientoVar.fechaNacimiento = datosNacimientoVarInput?.fechaNacimiento&#xD;&#xA;nacimientoVar.codigoCNV = datosNacimientoVarInput?.codigoCNV&#xD;&#xA;return nacimientoVar" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.Nacimiento">
-          <referencedElements xmi:type="process:ContractInput" xmi:id="_wW_fgWL1EfG1yaJd8N0m7A" name="datosNacimientoVarInput" type="COMPLEX"/>
+        <defaultValue xmi:type="expression:Expression" xmi:id="_Y4QLkGk0EfGc59IOA9NHIQ" name="initDatosNacimientoVar()" content="def nacimientoVar = new com.company.model.Nacimiento()&#xD;&#xA;nacimientoVar.nombres = datosNacimientoVarInput?.nombres&#xD;&#xA;nacimientoVar.apellidoPaterno = datosNacimientoVarInput?.apellidoPaterno&#xD;&#xA;nacimientoVar.apellidoMaterno = datosNacimientoVarInput?.apellidoMaterno&#xD;&#xA;nacimientoVar.fechaNacimiento = datosNacimientoVarInput?.fechaNacimiento&#xD;&#xA;nacimientoVar.codigoCNV = datosNacimientoVarInput?.codigoCNV&#xD;&#xA;nacimientoVar.dniDeclarante = datosNacimientoVarInput?.dniDeclarante&#xD;&#xA;return nacimientoVar" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.Nacimiento">
+          <referencedElements xmi:type="process:ContractInput" xmi:id="_Y4QLkWk0EfGc59IOA9NHIQ" name="datosNacimientoVarInput" type="COMPLEX"/>
         </defaultValue>
       </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_pDXuxF_FEfGgAISnwwXOlg">
-        <targetForm xmi:type="expression:Expression" xmi:id="_680GYl_OEfGgAISnwwXOlg" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_Ig34Amk1EfGc59IOA9NHIQ" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_pDXuxl_FEfGgAISnwwXOlg">
         <targetForm xmi:type="expression:Expression" xmi:id="_pDXux1_FEfGgAISnwwXOlg" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
@@ -121,14 +121,15 @@
       </connections>
       <actors xmi:type="process:Actor" xmi:id="_pDY80V_FEfGgAISnwwXOlg" documentation="Este es un ejemplo de actor que está mapeado a cualquier usuario de la organización ACME" name="Employee actor" initiator="true"/>
       <contract xmi:type="process:Contract" xmi:id="_pDY80l_FEfGgAISnwwXOlg">
-        <inputs xmi:type="process:ContractInput" xmi:id="_wW-RYGL1EfG1yaJd8N0m7A" name="datosNacimientoVarInput" type="COMPLEX" dataReference="datosNacimientoVar">
-          <inputs xmi:type="process:ContractInput" xmi:id="_wW-RYWL1EfG1yaJd8N0m7A" name="nombres"/>
-          <inputs xmi:type="process:ContractInput" xmi:id="_wW-4cGL1EfG1yaJd8N0m7A" name="apellidoPaterno"/>
-          <inputs xmi:type="process:ContractInput" xmi:id="_wW-4cWL1EfG1yaJd8N0m7A" name="apellidoMaterno"/>
-          <inputs xmi:type="process:ContractInput" xmi:id="_wW-4cmL1EfG1yaJd8N0m7A" name="fechaNacimiento"/>
-          <inputs xmi:type="process:ContractInput" xmi:id="_wW-4c2L1EfG1yaJd8N0m7A" name="codigoCNV"/>
+        <inputs xmi:type="process:ContractInput" xmi:id="_Y4PkgGk0EfGc59IOA9NHIQ" name="datosNacimientoVarInput" type="COMPLEX" dataReference="datosNacimientoVar">
+          <inputs xmi:type="process:ContractInput" xmi:id="_Y4PkgWk0EfGc59IOA9NHIQ" name="nombres"/>
+          <inputs xmi:type="process:ContractInput" xmi:id="_Y4Pkgmk0EfGc59IOA9NHIQ" name="apellidoPaterno"/>
+          <inputs xmi:type="process:ContractInput" xmi:id="_Y4Pkg2k0EfGc59IOA9NHIQ" name="apellidoMaterno"/>
+          <inputs xmi:type="process:ContractInput" xmi:id="_Y4PkhGk0EfGc59IOA9NHIQ" name="fechaNacimiento"/>
+          <inputs xmi:type="process:ContractInput" xmi:id="_Y4PkhWk0EfGc59IOA9NHIQ" name="codigoCNV"/>
+          <inputs xmi:type="process:ContractInput" xmi:id="_Y4Pkhmk0EfGc59IOA9NHIQ" name="dniDeclarante"/>
         </inputs>
-        <constraints xmi:type="process:ContractConstraint" xmi:id="_7GxmgGL2EfG1yaJd8N0m7A" expression="datosNacimientoVarInput.codigoCNV != null" errorMessage="&quot;El código CNV es obligatorio para el registro.&quot;" name="validarCNV">
+        <constraints xmi:type="process:ContractConstraint" xmi:id="_XwmxkGk1EfGc59IOA9NHIQ" expression="datosNacimientoVarInput.codigoCNV != null" errorMessage="El código CNV es obligatorio para el registro." name="validarCNV">
           <inputNames>datosNacimientoVarInput</inputNames>
         </constraints>
       </contract>
