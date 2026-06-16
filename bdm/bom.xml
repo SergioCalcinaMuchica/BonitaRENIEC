@@ -76,6 +76,19 @@
             <queries/>
             <indexes/>
         </businessObject>
+        <businessObject qualifiedName="com.company.model.Nacimiento">
+            <fields>
+                <field type="TEXT" length="255" name="nombres" nullable="true" collection="false"/>
+                <field type="TEXT" length="255" name="apellidoPaterno" nullable="true" collection="false"/>
+                <field type="TEXT" length="255" name="apellidoMaterno" nullable="true" collection="false"/>
+                <field type="TEXT" length="255" name="fechaNacimiento" nullable="true" collection="false"/>
+                <field type="TEXT" length="255" name="codigoCNV" nullable="true" collection="false"/>
+                <field type="TEXT" length="255" name="dniDeclarante" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
         <businessObject qualifiedName="com.company.model.RegistroPadron">
             <fields>
                 <field type="LONG" length="255" name="idRegistro" nullable="true" collection="false"/>
