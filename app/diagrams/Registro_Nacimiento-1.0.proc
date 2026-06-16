@@ -2,13 +2,13 @@
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:decision="http://www.bonitasoft.org/ns/bpm/process/decision" xmlns:expression="http://www.bonitasoft.org/ns/bpm/expression" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:process="http://www.bonitasoft.org/ns/bpm/process">
   <process:MainProcess xmi:id="_pDXusF_FEfGgAISnwwXOlg" name="Registro_Nacimiento" bonitaModelVersion="9">
     <elements xmi:type="process:Pool" xmi:id="_pDXusV_FEfGgAISnwwXOlg" name="Dirección de Registros Civiles">
-      <elements xmi:type="process:Lane" xmi:id="_pDXusl_FEfGgAISnwwXOlg" name="Registrador Civil" actor="_pDY80V_FEfGgAISnwwXOlg">
+      <elements xmi:type="process:Lane" xmi:id="_pDXusl_FEfGgAISnwwXOlg" name="Registrador Civil" actor="_EP8fQGk-EfGc59IOA9NHIQ">
         <elements xmi:type="process:StartEvent" xmi:id="_pDXus1_FEfGgAISnwwXOlg" name="Inicio1" outgoing="_pDXuyF_FEfGgAISnwwXOlg">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_pDXutF_FEfGgAISnwwXOlg" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_pDXutV_FEfGgAISnwwXOlg" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_pDXutl_FEfGgAISnwwXOlg" name="" content="" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:Task" xmi:id="_pDXut1_FEfGgAISnwwXOlg" name="Verificar documentos y requisitos" outgoing="_9sQMUF_HEfGgAISnwwXOlg" incoming="_pDXuyF_FEfGgAISnwwXOlg" overrideActorsOfTheLane="false">
+        <elements xmi:type="process:Task" xmi:id="_pDXut1_FEfGgAISnwwXOlg" name="Verificar documentos y requisitos" outgoing="_9sQMUF_HEfGgAISnwwXOlg" incoming="_pDXuyF_FEfGgAISnwwXOlg" actor="_CvO6cGk-EfGc59IOA9NHIQ">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_pDXuuF_FEfGgAISnwwXOlg" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_pDXuuV_FEfGgAISnwwXOlg" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_pDXuul_FEfGgAISnwwXOlg" name="" content="" returnTypeFixed="true"/>
@@ -58,7 +58,7 @@
           <stepSummary xmi:type="expression:Expression" xmi:id="_f1N441_MEfGgAISnwwXOlg" name="" content="" returnTypeFixed="true"/>
         </elements>
       </elements>
-      <elements xmi:type="process:Lane" xmi:id="_U1gcUF_HEfGgAISnwwXOlg" name="Oficina de Tecnologías de la Información">
+      <elements xmi:type="process:Lane" xmi:id="_U1gcUF_HEfGgAISnwwXOlg" name="Oficina de Tecnologías de la Información" actor="_CvO6cGk-EfGc59IOA9NHIQ">
         <elements xmi:type="process:ServiceTask" xmi:id="_ijWP4F_IEfGgAISnwwXOlg" name="Verificar huellas biométricas" outgoing="_cLsp81_LEfGgAISnwwXOlg" incoming="_ijW28V_IEfGgAISnwwXOlg">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_ijWP4l_IEfGgAISnwwXOlg" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_ijWP4V_IEfGgAISnwwXOlg" name="" content="" returnTypeFixed="true"/>
@@ -81,12 +81,10 @@
         </elements>
       </elements>
       <data xmi:type="process:BusinessObjectData" xmi:id="_H7FG0GL0EfG1yaJd8N0m7A" name="datosNacimientoVar" dataType="_pDY86l_FEfGgAISnwwXOlg" className="com.company.model.Nacimiento">
-        <defaultValue xmi:type="expression:Expression" xmi:id="_Y4QLkGk0EfGc59IOA9NHIQ" name="initDatosNacimientoVar()" content="def nacimientoVar = new com.company.model.Nacimiento()&#xD;&#xA;nacimientoVar.nombres = datosNacimientoVarInput?.nombres&#xD;&#xA;nacimientoVar.apellidoPaterno = datosNacimientoVarInput?.apellidoPaterno&#xD;&#xA;nacimientoVar.apellidoMaterno = datosNacimientoVarInput?.apellidoMaterno&#xD;&#xA;nacimientoVar.fechaNacimiento = datosNacimientoVarInput?.fechaNacimiento&#xD;&#xA;nacimientoVar.codigoCNV = datosNacimientoVarInput?.codigoCNV&#xD;&#xA;nacimientoVar.dniDeclarante = datosNacimientoVarInput?.dniDeclarante&#xD;&#xA;return nacimientoVar" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.Nacimiento">
-          <referencedElements xmi:type="process:ContractInput" xmi:id="_Y4QLkWk0EfGc59IOA9NHIQ" name="datosNacimientoVarInput" type="COMPLEX"/>
-        </defaultValue>
+        <defaultValue xmi:type="expression:Expression" xmi:id="_Y4QLkGk0EfGc59IOA9NHIQ" name="initDatosNacimientoVar()" content="return new com.company.model.Nacimiento();" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.Nacimiento"/>
       </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_pDXuxF_FEfGgAISnwwXOlg">
-        <targetForm xmi:type="expression:Expression" xmi:id="_Ig34Amk1EfGc59IOA9NHIQ" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_yvF0cGk5EfGc59IOA9NHIQ" name="newForm1" content="26d7d4db-3977-449b-92c8-95a9eb033d25" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_pDXuxl_FEfGgAISnwwXOlg">
         <targetForm xmi:type="expression:Expression" xmi:id="_pDXux1_FEfGgAISnwwXOlg" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
@@ -120,6 +118,8 @@
         <condition xmi:type="expression:Expression" xmi:id="_f1Of9l_MEfGgAISnwwXOlg" name="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </connections>
       <actors xmi:type="process:Actor" xmi:id="_pDY80V_FEfGgAISnwwXOlg" documentation="Este es un ejemplo de actor que está mapeado a cualquier usuario de la organización ACME" name="Employee actor" initiator="true"/>
+      <actors xmi:type="process:Actor" xmi:id="_CvO6cGk-EfGc59IOA9NHIQ" name="Sub_Direccion_Tecnico_Normativa"/>
+      <actors xmi:type="process:Actor" xmi:id="_EP8fQGk-EfGc59IOA9NHIQ" name="Sub_Direccion_Procesamiento_Registros_Civiles"/>
       <contract xmi:type="process:Contract" xmi:id="_pDY80l_FEfGgAISnwwXOlg">
         <inputs xmi:type="process:ContractInput" xmi:id="_Y4PkgGk0EfGc59IOA9NHIQ" name="datosNacimientoVarInput" type="COMPLEX" dataReference="datosNacimientoVar">
           <inputs xmi:type="process:ContractInput" xmi:id="_Y4PkgWk0EfGc59IOA9NHIQ" name="nombres"/>
