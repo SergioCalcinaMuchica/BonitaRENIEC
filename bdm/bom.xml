@@ -113,8 +113,8 @@
                 <field type="TEXT" length="255" name="nombres" nullable="true" collection="false"/>
                 <field type="TEXT" length="255" name="apellidoPaterno" nullable="true" collection="false"/>
                 <field type="TEXT" length="255" name="apellidoMaterno" nullable="true" collection="false"/>
-                <field type="TEXT" length="255" name="fechaNacimiento" nullable="true" collection="false"/>
-                <field type="TEXT" length="255" name="codigoCNV" nullable="true" collection="false"/>
+                <field type="LOCALDATE" length="255" name="fechaNacimiento" nullable="true" collection="false"/>
+                <field type="INTEGER" length="255" name="codigoCNV" nullable="true" collection="false"/>
                 <field type="TEXT" length="255" name="dniDeclarante" nullable="true" collection="false"/>
             </fields>
             <uniqueConstraints/>
