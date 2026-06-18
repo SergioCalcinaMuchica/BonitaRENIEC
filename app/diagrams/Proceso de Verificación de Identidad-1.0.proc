@@ -123,7 +123,7 @@
         <defaultValue xmi:type="expression:Expression" xmi:id="_acIvcWH9EfGAnsPXNzAHmA" name="" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object"/>
       </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_z5SVBF7sEfGeuOCR8x48OA">
-        <targetForm xmi:type="expression:Expression" xmi:id="_W8-rgGH-EfGAnsPXNzAHmA" name="newForm" content="490245e2-762f-4acd-8df7-433abfaaa553" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_W8-rgGH-EfGAnsPXNzAHmA" name="formVerificacionIdentidad" content="490245e2-762f-4acd-8df7-433abfaaa553" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_z5SVBl7sEfGeuOCR8x48OA">
         <targetForm xmi:type="expression:Expression" xmi:id="_z5SVB17sEfGeuOCR8x48OA" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
