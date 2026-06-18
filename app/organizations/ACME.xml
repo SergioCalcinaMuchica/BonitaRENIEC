@@ -612,6 +612,12 @@
     <group name="RENIEC">
       <displayName>RENIEC</displayName>
     </group>
+    <group name="SubgerenciaDeVerificacion" parentPath="/RENIEC">
+      <displayName>SubgerenciaDeVerificacion</displayName>
+    </group>
+    <group name="DireccionDeRegistrosElectorales" parentPath="/RENIEC">
+      <displayName>DireccionDeRegistrosElectorales</displayName>
+    </group>
   </groups>
   <memberships>
     <membership>
