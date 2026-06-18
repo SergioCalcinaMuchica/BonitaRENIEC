@@ -124,10 +124,10 @@
           </referencedElements>
         </defaultValue>
       </data>
-      <formMapping xmi:type="process:FormMapping" xmi:id="_ppLkhF6nEfG7LsMh-c1URw">
-        <targetForm xmi:type="expression:Expression" xmi:id="_c95gUGeJEfGqtcWw1-Zpfw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+      <formMapping xmi:type="process:FormMapping" xmi:id="_ppLkhF6nEfG7LsMh-c1URw" type="NONE">
+        <targetForm xmi:type="expression:Expression" xmi:id="_HrQs0GsxEfGovsLIQDHVMQ" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
-      <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_ppLkhl6nEfG7LsMh-c1URw">
+      <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_ppLkhl6nEfG7LsMh-c1URw" type="NONE">
         <targetForm xmi:type="expression:Expression" xmi:id="_ppLkh16nEfG7LsMh-c1URw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </overviewFormMapping>
       <connections xmi:type="process:SequenceFlow" xmi:id="_o7EPUF6pEfG7LsMh-c1URw" target="_oQSM8F6pEfG7LsMh-c1URw" source="_dsihYF6pEfG7LsMh-c1URw">
@@ -303,7 +303,7 @@
       <formMapping xmi:type="process:FormMapping" xmi:id="_c0gOf19fEfG2EfxYvlLAlw">
         <targetForm xmi:type="expression:Expression" xmi:id="_m9T6IGdlEfGsj6uVwuWMow" name="instanciacionEmisionCertificados" content="f83e073e-bdf7-4f6d-9dc7-c733938415c0" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
-      <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_c0gOgV9fEfG2EfxYvlLAlw">
+      <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_c0gOgV9fEfG2EfxYvlLAlw" type="NONE">
         <targetForm xmi:type="expression:Expression" xmi:id="_c0gOgl9fEfG2EfxYvlLAlw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </overviewFormMapping>
       <connections xmi:type="process:SequenceFlow" xmi:id="_vOgEkF9fEfG2EfxYvlLAlw" target="_LXBzgF92EfG2EfxYvlLAlw" source="_pXOvMF9fEfG2EfxYvlLAlw">

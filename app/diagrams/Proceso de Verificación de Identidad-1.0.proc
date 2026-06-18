@@ -125,7 +125,7 @@
       <formMapping xmi:type="process:FormMapping" xmi:id="_z5SVBF7sEfGeuOCR8x48OA">
         <targetForm xmi:type="expression:Expression" xmi:id="_W8-rgGH-EfGAnsPXNzAHmA" name="formVerificacionIdentidad" content="490245e2-762f-4acd-8df7-433abfaaa553" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
-      <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_z5SVBl7sEfGeuOCR8x48OA">
+      <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_z5SVBl7sEfGeuOCR8x48OA" type="NONE">
         <targetForm xmi:type="expression:Expression" xmi:id="_z5SVB17sEfGeuOCR8x48OA" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </overviewFormMapping>
       <connections xmi:type="process:SequenceFlow" xmi:id="_z5SVCF7sEfGeuOCR8x48OA" target="_OQgD0F7uEfGeuOCR8x48OA" source="_YmyXEGhCEfGAPO0z8T93XA">
