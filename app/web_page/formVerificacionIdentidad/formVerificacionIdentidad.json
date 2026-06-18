@@ -1,10 +1,10 @@
 {
-  "id" : "newForm",
-  "name" : "newForm",
+  "id" : "formVerificacionIdentidad",
+  "name" : "formVerificacionIdentidad",
   "type" : "form",
   "uuid" : "490245e2-762f-4acd-8df7-433abfaaa553",
   "modelVersion" : "2.6",
-  "lastUpdate" : 1780788051416,
+  "lastUpdate" : 1781748638274,
   "description" : "Page generated with Bonita UI designer",
   "rows" : [
     [
@@ -13,7 +13,16 @@
         "dimension" : {
           "xs" : 12
         },
-        "propertyValues" : { },
+        "propertyValues" : {
+          "cssClasses" : {
+            "type" : "constant",
+            "value" : ""
+          },
+          "hidden" : {
+            "type" : "constant",
+            "value" : false
+          }
+        },
         "reference" : "0ead6a92-5361-4aa5-b7f5-3fdfdec81f67",
         "hasValidationError" : false,
         "id" : "pbFormContainer",
