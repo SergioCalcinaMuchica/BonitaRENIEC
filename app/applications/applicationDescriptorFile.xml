@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<applications xmlns="http://documentation.bonitasoft.com/application-xml-schema/1.1">
+    <application homePage="procesos" layout="custompage_layoutBonita" theme="custompage_themeBonita" token="tramites-reniec" version="1.0" profile="User" state="ACTIVATED">
+        <displayName>Portal Interno RENIEC</displayName>
+        <applicationPages>
+            <applicationPage customPage="custompage_processlistBonita" token="procesos"/>
+            <applicationPage customPage="custompage_tasklist" token="tareas"/>
+        </applicationPages>
+        <applicationMenus>
+            <applicationMenu applicationPage="procesos">
+                <displayName>Iniciar Trámite</displayName>
+            </applicationMenu>
+            <applicationMenu applicationPage="tareas">
+                <displayName>Bandeja de Tareas</displayName>
+            </applicationMenu>
+        </applicationMenus>
+    </application>
+</applications>

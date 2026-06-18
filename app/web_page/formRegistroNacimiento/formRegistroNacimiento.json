@@ -4,7 +4,7 @@
   "type" : "form",
   "uuid" : "31375d65-a444-43bc-85aa-44f142937368",
   "modelVersion" : "2.6",
-  "lastUpdate" : 1781645263557,
+  "lastUpdate" : 1781799397726,
   "description" : "Page generated with Bonita UI designer",
   "rows" : [
     [
@@ -345,7 +345,7 @@
                         },
                         "showToday" : {
                           "type" : "constant",
-                          "value" : false
+                          "value" : true
                         },
                         "labelPosition" : {
                           "type" : "constant",
