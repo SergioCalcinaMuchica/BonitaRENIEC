@@ -237,7 +237,7 @@
         <dynamicDescription xmi:type="expression:Expression" xmi:id="_nDIfYWBAEfGHw4pbSBQcVQ" name="" content="" returnTypeFixed="true"/>
         <stepSummary xmi:type="expression:Expression" xmi:id="_nDIfY2BAEfGHw4pbSBQcVQ" name="" content="" returnTypeFixed="true"/>
       </elements>
-      <formMapping xmi:type="process:FormMapping" xmi:id="_DaB48GBAEfGHw4pbSBQcVQ">
+      <formMapping xmi:type="process:FormMapping" xmi:id="_DaB48GBAEfGHw4pbSBQcVQ" type="NONE">
         <targetForm xmi:type="expression:Expression" xmi:id="_DaB48WBAEfGHw4pbSBQcVQ" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_DaB48mBAEfGHw4pbSBQcVQ">

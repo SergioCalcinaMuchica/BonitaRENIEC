@@ -27,6 +27,17 @@
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_KVMK0V6sEfG7LsMh-c1URw" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_KVMK0F6sEfG7LsMh-c1URw" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_KVMK0l6sEfG7LsMh-c1URw" name="" content="" returnTypeFixed="true"/>
+          <operations xmi:type="expression:Operation" xmi:id="_N5cCYG0KEfGZbJ7T-_zxBg">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_N5cCYW0KEfGZbJ7T-_zxBg" name="solicitudCertificacion" content="solicitudCertificacion" type="TYPE_VARIABLE" returnType="com.company.model.SolicitudCertificacion">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_OzaXUG0KEfGZbJ7T-_zxBg" name="solicitudCertificacion" dataType="_ppLkpF6nEfG7LsMh-c1URw" className="com.company.model.SolicitudCertificacion"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_N5cCYm0KEfGZbJ7T-_zxBg" name="newScript()" content="solicitudCertificacion.validacion = validacion&#xD;&#xA;solicitudCertificacion.certificado = certificado&#xD;&#xA;solicitudCertificacion.estado = &quot;EMITIDA&quot;&#xD;&#xA;&#xD;&#xA;return solicitudCertificacion" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.SolicitudCertificacion">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_T8LA4G0KEfGZbJ7T-_zxBg" name="solicitudCertificacion" dataType="_ppLkpF6nEfG7LsMh-c1URw" className="com.company.model.SolicitudCertificacion"/>
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_T8LA4W0KEfGZbJ7T-_zxBg" name="validacion" dataType="_ppLkpF6nEfG7LsMh-c1URw" className="com.company.model.ValidacionBiometrica"/>
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_T8LA4m0KEfGZbJ7T-_zxBg" name="certificado" dataType="_ppLkpF6nEfG7LsMh-c1URw" className="com.company.model.CertificadoDigital"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_N5cCY20KEfGZbJ7T-_zxBg" type="ASSIGNMENT"/>
+          </operations>
           <loopCondition xmi:type="expression:Expression" xmi:id="_KVMK016sEfG7LsMh-c1URw" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_KVMK1F6sEfG7LsMh-c1URw" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_KVMK1V6sEfG7LsMh-c1URw" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
@@ -55,10 +66,34 @@
           <iteratorExpression xmi:type="expression:Expression" xmi:id="__G6Z1l-CEfG2EfxYvlLAlw" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="__G6Z1V-CEfG2EfxYvlLAlw" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:Task" xmi:id="_IWAFgGdYEfGsj6uVwuWMow" name="Habilitar emisión de certificados digitales" outgoing="_LiKUQF6sEfG7LsMh-c1URw" incoming="_B2BbkV6rEfG7LsMh-c1URw" overrideActorsOfTheLane="false">
+        <elements xmi:type="process:Task" xmi:id="_IWAFgGdYEfGsj6uVwuWMow" name="Habilitar emisión de certificados digitales" outgoing="_LiKUQF6sEfG7LsMh-c1URw" incoming="_B2BbkV6rEfG7LsMh-c1URw" actor="_BiooYGdlEfGsj6uVwuWMow">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_B2ANcV6rEfG7LsMh-c1URw" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_B2ANcF6rEfG7LsMh-c1URw" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_B2ANcl6rEfG7LsMh-c1URw" name="" content="" returnTypeFixed="true"/>
+          <operations xmi:type="expression:Operation" xmi:id="_PKwAoG0HEfGZbJ7T-_zxBg">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_PKwAoW0HEfGZbJ7T-_zxBg" name="certificado" content="certificado" type="TYPE_VARIABLE" returnType="com.company.model.CertificadoDigital">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_PikqwG0HEfGZbJ7T-_zxBg" name="certificado" dataType="_ppLkpF6nEfG7LsMh-c1URw" className="com.company.model.CertificadoDigital"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_PKwAom0HEfGZbJ7T-_zxBg" name="newScript()" content="certificado.emitido = habilitacionConfirmada&#xD;&#xA;certificado.tipo = &quot;CertificacionDNIe&quot;&#xD;&#xA;certificado.idCertificado = &quot;CERT-&quot; + System.currentTimeMillis()&#xD;&#xA;&#xD;&#xA;return certificado" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.CertificadoDigital">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_xQCZAG0JEfGZbJ7T-_zxBg" name="habilitacionConfirmada" type="BOOLEAN" description="Funcionario ha confirmado">
+                <mapping xmi:type="process:ContractInputMapping" xmi:id="_xQCZAW0JEfGZbJ7T-_zxBg"/>
+              </referencedElements>
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_xQCZAm0JEfGZbJ7T-_zxBg" name="certificado" dataType="_ppLkpF6nEfG7LsMh-c1URw" className="com.company.model.CertificadoDigital"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_PKwAo20HEfGZbJ7T-_zxBg" type="ASSIGNMENT"/>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_lJxAMG0IEfGZbJ7T-_zxBg">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_lJxAMW0IEfGZbJ7T-_zxBg" name="solicitudCertificacion" content="solicitudCertificacion" type="TYPE_VARIABLE" returnType="com.company.model.SolicitudCertificacion">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_loNPsG0IEfGZbJ7T-_zxBg" name="solicitudCertificacion" dataType="_ppLkpF6nEfG7LsMh-c1URw" className="com.company.model.SolicitudCertificacion"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_lJxAMm0IEfGZbJ7T-_zxBg" name="newScript()" content="if(habilitacionConfirmada==true){&#xD;&#xA;&#x9;solicitudCertificacion.estado = &quot;APROBADA&quot;&#xD;&#xA;}else{&#xD;&#xA;&#x9;solicitudCertificacion.estado = &quot;RECHAZADA_POR_SUPERVISOR&quot;&#xD;&#xA;}&#xD;&#xA;return solicitudCertificacion" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.SolicitudCertificacion">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_uudpkG0IEfGZbJ7T-_zxBg" name="habilitacionConfirmada" type="BOOLEAN" description="Funcionario ha confirmado">
+                <mapping xmi:type="process:ContractInputMapping" xmi:id="_uudpkW0IEfGZbJ7T-_zxBg"/>
+              </referencedElements>
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_uudpkm0IEfGZbJ7T-_zxBg" name="solicitudCertificacion" dataType="_ppLkpF6nEfG7LsMh-c1URw" className="com.company.model.SolicitudCertificacion"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_lJxAM20IEfGZbJ7T-_zxBg" type="ASSIGNMENT"/>
+          </operations>
           <loopCondition xmi:type="expression:Expression" xmi:id="_B2ANc16rEfG7LsMh-c1URw" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_B2ANdF6rEfG7LsMh-c1URw" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_B2ANdV6rEfG7LsMh-c1URw" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
@@ -93,6 +128,15 @@
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_k4II4l6qEfG7LsMh-c1URw" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_k4II4V6qEfG7LsMh-c1URw" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_k4II416qEfG7LsMh-c1URw" name="" content="" returnTypeFixed="true"/>
+          <operations xmi:type="expression:Operation" xmi:id="_soOdMG0FEfGZbJ7T-_zxBg">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_soOdMW0FEfGZbJ7T-_zxBg" name="validacion" content="validacion" type="TYPE_VARIABLE" returnType="com.company.model.ValidacionBiometrica">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_tyjiUG0FEfGZbJ7T-_zxBg" name="validacion" dataType="_ppLkpF6nEfG7LsMh-c1URw" className="com.company.model.ValidacionBiometrica"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_soOdMm0FEfGZbJ7T-_zxBg" name="newScript()" content="import java.time.LocalDate&#xD;&#xA;&#xD;&#xA;validacion.resultado=true&#xD;&#xA;validacion.fechaValidacion=java.time.LocalDate.now()&#xD;&#xA;return validacion" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.ValidacionBiometrica">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_jJ16YG0JEfGZbJ7T-_zxBg" name="validacion" dataType="_ppLkpF6nEfG7LsMh-c1URw" className="com.company.model.ValidacionBiometrica"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_soOdM20FEfGZbJ7T-_zxBg" type="ASSIGNMENT"/>
+          </operations>
           <loopCondition xmi:type="expression:Expression" xmi:id="_k4II5F6qEfG7LsMh-c1URw" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_k4II5V6qEfG7LsMh-c1URw" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_k4II5l6qEfG7LsMh-c1URw" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
@@ -118,9 +162,10 @@
         <defaultValue xmi:type="expression:Expression" xmi:id="_YtSu8WdWEfGsj6uVwuWMow" name="init_certificado()" content="import com.company.model.CertificadoDigital&#xD;&#xA;def c = new CertificadoDigital()&#xD;&#xA;c.idCertificado = &quot;CERT-&quot; + System.currentTimeMillis()&#xD;&#xA;c.tipo = &quot;DNIe&quot;&#xD;&#xA;c.emitido = false&#xD;&#xA;return c" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.CertificadoDigital"/>
       </data>
       <data xmi:type="process:BusinessObjectData" xmi:id="_99LPsGeHEfGY_Y0xBDxDBw" name="solicitudCertificacion" dataType="_ppLkpF6nEfG7LsMh-c1URw" className="com.company.model.SolicitudCertificacion">
-        <defaultValue xmi:type="expression:Expression" xmi:id="_99LPsWeHEfGY_Y0xBDxDBw" name="init_solicitudCertificacion()" content="import com.company.model.SolicitudCertificacion&#xD;&#xA;SolicitudCertificacion.findByIdSolicitud(idSolicitud, 0, 1)?.first()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.SolicitudCertificacion">
-          <referencedElements xmi:type="process:ContractInput" xmi:id="_an4HUGeNEfGhc4P6xtATfA" name="idSolicitud">
-            <mapping xmi:type="process:ContractInputMapping" xmi:id="_an4HUWeNEfGhc4P6xtATfA"/>
+        <defaultValue xmi:type="expression:Expression" xmi:id="_99LPsWeHEfGY_Y0xBDxDBw" name="init_solicitudCertificacion()" content="import com.company.model.SolicitudCertificacion&#xD;&#xA;return solicitudCertificacionDAO.findByIdSolicitud(idSolicitud, 0, 1)?.first()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.SolicitudCertificacion">
+          <referencedElements xmi:type="expression:Expression" xmi:id="_9V0RUG0EEfGZbJ7T-_zxBg" name="solicitudCertificacionDAO" content="solicitudCertificacionDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.company.model.SolicitudCertificacionDAO" returnTypeFixed="true"/>
+          <referencedElements xmi:type="process:ContractInput" xmi:id="_9V0RUW0EEfGZbJ7T-_zxBg" name="idSolicitud">
+            <mapping xmi:type="process:ContractInputMapping" xmi:id="_9V0RUm0EEfGZbJ7T-_zxBg"/>
           </referencedElements>
         </defaultValue>
       </data>
@@ -148,7 +193,9 @@
       </connections>
       <connections xmi:type="process:SequenceFlow" xmi:id="_B2BbkV6rEfG7LsMh-c1URw" name="Sí" target="_IWAFgGdYEfGsj6uVwuWMow" source="_8Sh90F6qEfG7LsMh-c1URw">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_B2Bbkl6rEfG7LsMh-c1URw"/>
-        <condition xmi:type="expression:Expression" xmi:id="_B2Bbk16rEfG7LsMh-c1URw" name="true" content="true" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+        <condition xmi:type="expression:Expression" xmi:id="_B2Bbk16rEfG7LsMh-c1URw" name="newScript()" content="return  validacion!= null &amp;&amp; validacion.resultado == true" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean" returnTypeFixed="true">
+          <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_371C8G0GEfGZbJ7T-_zxBg" name="validacion" dataType="_ppLkpF6nEfG7LsMh-c1URw" className="com.company.model.ValidacionBiometrica"/>
+        </condition>
       </connections>
       <connections xmi:type="process:SequenceFlow" xmi:id="_K_YMxF6rEfG7LsMh-c1URw" name="No" target="_K_XlsF6rEfG7LsMh-c1URw" source="_8Sh90F6qEfG7LsMh-c1URw" isDefault="true">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_K_YMxV6rEfG7LsMh-c1URw"/>
@@ -218,7 +265,7 @@
         <completionCondition xmi:type="expression:Expression" xmi:id="_qiIcGF9fEfG2EfxYvlLAlw" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
         <inputMappings xmi:type="process:InputMapping" xmi:id="__mihkGeEEfGzEvGcfmp1xA" subprocessTarget="idSolicitud">
           <processSource xmi:type="expression:Expression" xmi:id="__mihkWeEEfGzEvGcfmp1xA" name="newScript()" content="solicitudCertificacion.idSolicitud.toString()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-            <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_X0N0QGeKEfGHhbjJYyNLcQ" name="solicitudCertificacion" dataType="_ppLkpF6nEfG7LsMh-c1URw" className="com.company.model.SolicitudCertificacion"/>
+            <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_Cebb0G0DEfGZbJ7T-_zxBg" name="solicitudCertificacion" dataType="_ppLkpF6nEfG7LsMh-c1URw" className="com.company.model.SolicitudCertificacion"/>
           </processSource>
         </inputMappings>
         <calledActivityName xmi:type="expression:Expression" xmi:id="_DZUWFF92EfG2EfxYvlLAlw" name="Dirección de Certificación y Servicios Digitales" content="Dirección de Certificación y Servicios Digitales" returnTypeFixed="true"/>
@@ -324,7 +371,9 @@
       </connections>
       <connections xmi:type="process:SequenceFlow" xmi:id="_T3EkIF-FEfG2EfxYvlLAlw" name="Sí" target="_Pikl4F-BEfG2EfxYvlLAlw" source="_N386UF-FEfG2EfxYvlLAlw">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_T3EkIV-FEfG2EfxYvlLAlw"/>
-        <condition xmi:type="expression:Expression" xmi:id="_T3EkIl-FEfG2EfxYvlLAlw" name="true" content="true" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+        <condition xmi:type="expression:Expression" xmi:id="_T3EkIl-FEfG2EfxYvlLAlw" name="newScript()" content="return solicitudCertificacion != null &amp;&amp; solicitudCertificacion.estado == &quot;EMITIDA&quot;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean" returnTypeFixed="true">
+          <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_8PSfYG0KEfGZbJ7T-_zxBg" name="solicitudCertificacion" dataType="_ppLkpF6nEfG7LsMh-c1URw" className="com.company.model.SolicitudCertificacion"/>
+        </condition>
       </connections>
       <connections xmi:type="process:SequenceFlow" xmi:id="_ZjWKcF-FEfG2EfxYvlLAlw" name="No" target="_VabNQF-FEfG2EfxYvlLAlw" source="_N386UF-FEfG2EfxYvlLAlw" isDefault="true">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_ZjWxgF-FEfG2EfxYvlLAlw"/>
